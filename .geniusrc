@@ -1,0 +1,121 @@
+#!/bin/bash
+
+if [[ "$(uname)" == "Darwin" ]]; then
+    echo "MacOS 환경으로 설정을 시작합니다."
+
+    # zsh config
+    if [ ! -d "$HOME/.oh-my-zsh" ]; then
+        echo "Oh My Zsh를 설치합니다."
+        
+        sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+        
+        echo "Oh My Zsh 설정 완료"
+    else
+        echo "Oh My Zsh가 이미 설정되어 있습니다."
+    fi
+    
+    # homebrew
+    if which brew > /dev/null 2>&1; then
+        echo "Homebrew가 이미 설치되어 있습니다."
+    else
+        echo "Homebrew를 설치합니다."
+        /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+        echo 'export PATH=/opt/homebrew/bin:$PATH' >> ~/.zshrc
+
+        echo "Homebrew를 설치완료"
+    fi
+
+    # JetBrains Toolbox
+    if [ -d "/Applications/JetBrains Toolbox.app" ]; then
+        echo "JetBrains Toolbox가 이미 설치되어 있습니다."
+    else
+        echo "JetBrains Toolbox를 설치합니다."
+        
+        brew install --cask jetbrains-toolbox
+        
+        echo "JetBrains Toolbox 설치 완료"
+    fi
+
+    # Chrome
+    if [ -d "/Applications/Google Chrome.app" ]; then
+        echo "Chrome가 이미 설치되어 있습니다."
+    else
+        echo "Chrome를 설치합니다."
+        
+        brew install --cask google-chrome
+        
+        echo "Chrome 설치 완료"
+    fi
+
+    # Notion
+    if [ -d "/Applications/Notion.app" ]; then
+        echo "Notion이 이미 설치되어 있습니다."
+    else
+        echo "Notion을 설치합니다."
+        
+        brew install --cask notion
+        
+        echo "Notion 설치 완료"
+    fi
+
+    # Rectangle
+    if [ -d "/Applications/Rectangle.app" ]; then
+        echo "Rectangle이 이미 설치되어 있습니다."
+    else
+        echo "Rectangle을 설치합니다."
+        
+        brew install --cask rectangle
+        
+        echo "Rectangle 설치 완료"
+    fi
+
+    # Raycast
+    if [ -d "/Applications/Raycast.app" ]; then
+        echo "Raycast가 이미 설치되어 있습니다."
+    else
+        echo "Raycast를 설치합니다."
+        
+        brew install --cask raycast
+        
+        echo "Raycast 설치 완료"
+    fi
+
+    # Docker
+    if which docker > /dev/null 2>&1; then
+        echo "docker가 이미 설치되어 있습니다."
+    else
+        echo "docker를 설치합니다."
+        brew install --cask docker
+
+        echo "docker설치 완료"
+    fi
+
+    echo "MacOS 환경 설정이 완료 됐어요."
+else
+    echo "$(uname)환경으로 설정을 시작합니다."
+
+    # zsh
+    if which zsh > /dev/null 2>&1; then
+        echo "zsh이 이미 설치되어 있습니다."
+    else
+        echo "zsh을 설치합니다."
+        brew install zsh
+
+        chsh -s $(which zsh)
+
+        echo "zsh설치 완료"
+    fi
+
+    echo "$(uname)환경으로 설정이 완료 됐어요."
+
+    # zsh config
+    if [ ! -d "$HOME/.oh-my-zsh" ]; then
+        echo "Oh My Zsh를 설치합니다."
+        
+        sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+        
+        echo "Oh My Zsh 설정 완료"
+    else
+        echo "Oh My Zsh가 이미 설정되어 있습니다."
+    fi
+fi
