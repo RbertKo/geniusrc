@@ -94,18 +94,6 @@ if [[ "$(uname)" == "Darwin" ]]; then
 else
     echo "$(uname)환경으로 설정을 시작합니다."
 
-    # zsh
-    if which zsh > /dev/null 2>&1; then
-        echo "zsh이 이미 설치되어 있습니다."
-    else
-        echo "zsh을 설치합니다."
-        brew install zsh
-
-        chsh -s $(which zsh)
-
-        echo "zsh설치 완료"
-    fi
-
     echo "$(uname)환경으로 설정이 완료 됐어요."
 
     # zsh config
