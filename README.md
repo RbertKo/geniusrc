@@ -11,6 +11,7 @@ sh .geniusrc
 **darwin(macos)**
  - oh my zsh
  - sdkman
+ - psql (libpq)
  - homebrew
  - JetBrains Toolbox
  - Chrome

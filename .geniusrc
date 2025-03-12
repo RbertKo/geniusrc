@@ -36,6 +36,18 @@ if [[ "$(uname)" == "Darwin" ]]; then
         echo "Homebrew를 설치완료"
     fi
 
+    if which psql > /dev/null 2>&1; then
+        echo "psql이 이미 설치되어 있습니다."
+    else
+        echo "psql을 설치합니다."
+
+        brew install libpq
+        echo 'export PATH="/opt/homebrew/opt/libpq/bin:$PATH"' >> ~/.zshrc
+        source ~/.zshrc
+
+        echo "psql 설치완료"
+    fi
+
     # JetBrains Toolbox
     if [ -d "/Applications/JetBrains Toolbox.app" ]; then
         echo "JetBrains Toolbox가 이미 설치되어 있습니다."
