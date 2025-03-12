@@ -6,3 +6,14 @@
 ```bash
 sh .geniusrc
 ```
+# what you want to install
+
+**darwin(macos)**
+ - oh my zsh
+ - homebrew
+ - JetBrains Toolbox
+ - Chrome
+ - Notion
+ - Rectangle
+ - Raycast
+ - Docker
