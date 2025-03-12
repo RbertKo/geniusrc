@@ -10,6 +10,7 @@ sh .geniusrc
 
 **darwin(macos)**
  - oh my zsh
+ - sdkman
  - homebrew
  - JetBrains Toolbox
  - Chrome
