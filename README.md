@@ -17,3 +17,6 @@ sh .geniusrc
  - Rectangle
  - Raycast
  - Docker
+
+**another (linux based)**
+ - oh my zsh
